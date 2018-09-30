@@ -42,3 +42,17 @@ Formatting:
 mkfs.ext2 /dev/sda1
 mkfs.ext4 /dev/sda2
 ```
+
+Mount File Partitions:
+```
+mount /dev/sda2 /mnt
+mkdir /mnt/boot
+mount /dev/sda1 /mnt/boot
+```
+
+### Installation
+Edit mirrors list:
+`vim /etc/pacman.d/mirrorlist`
+
+Install `base` packages:
+`pacstrap /mnt base`
