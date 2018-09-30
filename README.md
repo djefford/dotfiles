@@ -18,20 +18,27 @@ https://wiki.archlinux.org/index.php/installation_guide
 ### Disk
 Partitioning:
 ```
-# fdisk -l /dev/sda
+# fdisk /dev/sda
+---
+Command: o
 
-Command: g
 Command: n
 Partition number: 1
 First sector: 2048
-Last sector: 1499135
-
-Command: t
-Partition type: 4
+Last sector: +512M
 
 Command: n
 Partition number: 2
-First sector: 1499136
+First sector: default
+Last sector: +4096M
+
+Command: t
+Partition number: 2
+Hex code: 82
+
+Command: n
+Partition number: 3
+First sector: default
 Last sector: default
 
 Command: w
@@ -40,14 +47,14 @@ Command: w
 Formatting:
 ```
 # mkfs.ext2 /dev/sda1
-# mkfs.ext4 /dev/sda2
+# mkfs.ext4 /dev/sda3
+# mkswp /dev/sda2
 ```
 
 Mount File Partitions:
 ```
-# mount /dev/sda2 /mnt
-# mkdir /mnt/boot
-# mount /dev/sda1 /mnt/boot
+# mount /dev/sda3 /mnt
+# swapon /dev/sda2
 ```
 
 ### Installation
@@ -57,7 +64,7 @@ Edit mirrors list:
 
 Install `base` packages:
 
-`# pacstrap /mnt base`
+`# pacstrap /mnt base base-devel`
 
 ### Configure the system
 Generate fstab file:
@@ -68,22 +75,20 @@ chroot:
 
 `# arch-chroot /mnt`
 
-Swap file creation:
+Timezone/Localization/Network Configuration/Root password: defaults
+
+### Bootloader
+Install and configure GRUB:
 ```
-# dd if=/dev/zero of=/swapfile bs=1M count=512
-# chmod 600 /swapfile
-# mkswap /swapfile
-# swapon /swapfile
-# vi /etc/fstab
----
-/swapfile none swap defaults 0 0
+# pacman -S grub
+# grub-install /dev/sda
+# grub-mkconfig -o /boot/grub/grub.cfg
 ```
 
-Set time:
+### Reboot
+Follow instructions.
 
-```
-# ln -sf /usr/share/zoneinfo/America/Indianapolis /etc/localtime
-# hwclock --systohc
-```
+
+
 
 
