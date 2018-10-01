@@ -88,6 +88,21 @@ Install and configure GRUB:
 ### Reboot
 Follow instructions.
 
+## Post-Install
+Packages:
+```
+wpa_supplicant
+xorg-server
+xorg-apps
+xorg-xinit
+vim
+i3 (i3-gaps)
+mlocate
+xf86-video-vesa
+xterm
+ttf-dejavu
+git
+```
 
 
 
