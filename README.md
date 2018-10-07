@@ -9,6 +9,7 @@ i3-blocks
 zsh
 oh-my-zsh
 qutebrowser
+rxvt-unicode
 ```
 
 ## ArchLinux installation
@@ -99,9 +100,21 @@ vim
 i3 (i3-gaps)
 mlocate
 xf86-video-vesa
-xterm
 ttf-dejavu
 git
+xf86-video-intel
+dmenu
+rxvt-unicode
+libxft
+xorg-xbacklight
+alsa-utils
+xorg-xev
+pulseaudio
+pulseaudio-alsa
+feh
+xorg-xset
+zsh (oh-my-zsh)
+openssh
 ```
 
 
