@@ -104,4 +104,5 @@ feh
 xorg-xset
 zsh (oh-my-zsh)
 openssh
+sysstat
 ```
