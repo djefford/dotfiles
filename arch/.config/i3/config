@@ -27,7 +27,7 @@ font pango:monospace 10
 # font, it doesn’t scale on retina/hidpi displays.
 
 # Start i3 with xss-lock and i3lock
-exec --no-startup-id xss-lock -- i3lock -n -i ~/.config/lockscreen/chateau_fontainbleu.jpg
+exec --no-startup-id xss-lock -- i3lock -n -i ~/.config/lockscreen/chateau_fontainbleu.png
 
 # set background
 exec --no-startup-id feh --randomize --bg-scale ~/.config/wallpapers/*
