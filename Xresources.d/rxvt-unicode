@@ -30,7 +30,8 @@
 
 
 ! Terminal fonts
-URxvt.font: xft:Oxygen Mono:size=12
+URxvt.font:xft:Monospace:pixelsize=12
+!URxvt.font: xft:Oxygen Mono:size=12
 !*.font: xft:Ubuntu Mono:pixelsize=14,style=regular
 
 URxvt.scrollBar: false
