@@ -1,0 +1,15 @@
+[Unit]
+Description=Barrier mouse/keyboard share
+Requires=display-manager.service
+After=display-manager.service
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+ExecStart=/snap/barrier/83/usr/bin/barrierc -f --no-tray --debug INFO --name djimac [192.168.86.22]:24800
+Restart=always
+RestartSec=10
+User=djefford
+
+[Install]
+WantedBy=multi-user.target
